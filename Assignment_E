@@ -1,0 +1,75 @@
+Sanjivani College of Engineering, Kopargaon
+(An Autonomous Institute Affiliated to Savitribai Phule Pune University, Pune)
+Department of Computer Engineering
+
+Problem Statement: -. Sudoku (Backtracking) Given a partially filled 9×9 2D array ‘grid [9][9]’, the goal is to assign digits (from 1 to 9) to the empty cells so that every row, column, and sub grid of size 3×3 contains exactly one instance of the digits from 1 to 9.
+Abstract:
+This paper presents a backtracking algorithm to solve Sudoku puzzles by filling a 9x9 grid so that each row, column, and 3x3 sub grid contains the digits 1 to 9 exactly once. The algorithm recursively places digits in empty cells, checking for violations of Sudoku rules, and backtracks when a placement is invalid. Despite its exponential worst-case time complexity, backtracking effectively solves the puzzle by pruning invalid solutions early, making it a reliable method for constraint satisfaction problems like Sudoku.
+Key Words:
+Sudoku, backtracking, constraint satisfaction, recursive algorithm, depth-first search, computational complexity, puzzle solving, algorithmic approach.
+1.Introduction:
+Sudoku is a popular puzzle game requiring logical reasoning and problem-solving skills. The goal is to fill a partially filled 9x9 grid with digits from 1 to 9, ensuring each row, column, and 3x3 sub grid contains each digit exactly once. Given a partially filled 9x9 2D array, the objective is to assign digits to empty cells while satisfying these constraints. The backtracking algorithm solves the Sudoku problem efficiently. It tries numbers 1-9 in each empty cell, checks validity, recursively fills the grid, and backtracks if necessary. This approach ensures uniqueness of digits in rows, columns, and sub grids, making it ideal for Sudoku puzzle solving, constraint satisfaction problems, and logic-based problem-solving.
+ 
+
+2.Methods:
+The methods used in the Sudoku Backtracking algorithm:
+1. is Valid () Method
+- Checks if it's possible to place a number in a given cell.
+- Verifies the row, column, and 3x3 subgrid to ensure the number doesn't already exist.
+2. solve Sudoku () Method
+- Implements the backtracking algorithm.
+- Iterates through the grid to find empty cells.
+- Tries numbers from 1 to 9 in each empty cell.
+- Recursively calls itself to fill the rest of the grid.
+- Backtracks if none of the numbers work.
+3. print Grid () Method
+- Prints the Sudoku grid in a readable format.
+4. find Empty Cell () Method 
+- Finds the first empty cell in the grid.
+- Returns the row and column indices of the empty cell.
+5. is Full () Method 
+- Checks if the grid is completely filled
+6. backtrack () Method 
+- Resets the current cell to empty.
+- Reverts changes made in the recursive call.
+ 
+
+Key Variables:
+- grid[9][9]: The 2D array representing the Sudoku grid.
+- row and col: Indices of the current cell.
+- num: The number being tried in the current cell.
+
+Algorithmic Steps:
+1. Initialize the grid with given values.
+2. Call solveSudoku() to start the backtracking process.
+3. Use isValid() to check if a number can be placed in a cell.
+4. Recursively call solveSudoku() to fill the rest of the grid.
+5. Backtrack if none of the numbers work.
+6. Print the solved grid using printGrid().
+
+Time Complexity: O(9^(n*n)) in the worst case, where n is the grid size (9 for Sudoku).
+Space Complexity: O(n*n) for the grid and recursive call stack.
+
+Example Usage:
+int main () {
+    int grid[9][9] = {
+        // Partially filled grid values
+    }; 
+    if (solveSudoku(grid)) {
+        printGrid(grid);
+    } else {
+        cout << "No solution exists";
+    }
+    return 0;
+}
+3. Problem Explanation and Requirement Analysis
+Sudoku is a constraint-based puzzle that requires attention to detail and adherence to specific rules. The backtracking algorithm is ideal for solving the problem by testing possible digits in a recursive manner. This section describes the problem and the specific requirements for the Sudoku solver, such as constraint checking for rows, columns and sub grids.
+ 
+4.Result And Discussion:
+The backtracking algorithm effectively solves Sudoku puzzles by filling empty cells with digits while ensuring that each row, column, and 3x3 subgrid follows the game's rules. It places numbers one by one, checking for valid placements, and backtracks when an invalid option is encountered. The algorithm can solve puzzles quickly, even complex ones, although it can take more time when there are very few pre-filled cells. While the basic version works well, adding optimizations like heuristics can improve performance. Overall, backtracking is a reliable and efficient method for solving Sudoku puzzles.
+5.Conclusion:
+In conclusion, the backtracking algorithm is a powerful and efficient method for solving Sudoku puzzles. It systematically explores possible placements for each empty cell, ensuring all constraints are met. Despite potential challenges with complex puzzles, its ability to backtrack when encountering invalid solutions makes it a robust approach. With further optimizations, the algorithm can be enhanced, but its fundamental effectiveness in solving Sudoku remains clear.
+6.Reference:
+1. https://www.geeksforgeeks.org/sudoku-backtracking-7/
+2. https://scanftree.com/tutorial/algorithms/backtracking/sudoku/
+
